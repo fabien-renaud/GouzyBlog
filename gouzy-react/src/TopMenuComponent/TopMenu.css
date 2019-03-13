@@ -1,0 +1,12 @@
+#TopMenu {
+    background: #fff;
+    margin-left: 40px;
+    position: fixed;
+    opacity: 0.8;
+    width: 100%;
+}
+
+#logo {
+    height: 50px;
+    width: auto;
+}
