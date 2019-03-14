@@ -6,19 +6,23 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 
 import Header from "./HeaderComponent/Header";
-import TopMenu from "./TopMenuComponent/TopMenu";
+// import TopMenu from "./TopMenuComponent/TopMenu";
 import Home from './HomeComponent/Home';
 import Article from './ArticleComponent/Article';
+import DraftJS from "./DraftJSComponent/DraftJS";
 
 
 render(
     <Router>
         <div>
-            <TopMenu/>
+            {/*<TopMenu/>*/}
             <div className="container">
                 <Header/>
-                <Route exact path="/" component={Home}/>
-                <Route path="/:articleId" component={Article}/>
+                <Switch>
+                    <Route exact path="/" component={Home}/>
+                    <Route path="/edit/:articleId" component={DraftJS}/>
+                    <Route path="/:articleId" component={Article}/>
+                </Switch>
             </div>
         </div>
     </Router>,

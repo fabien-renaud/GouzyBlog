@@ -1,0 +1,28 @@
+header {
+    margin-bottom: 50px;
+}
+
+ul {
+    float: right;
+}
+
+li {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.8em;
+    letter-spacing: 0.2em;
+}
+
+li:hover {
+    background: linear-gradient(to right, #fce4ed, #ffe8cc);
+    transition-duration: 0.3s;
+    color: #fff;
+}
+
+.icon {
+    height: 15px;
+    width: auto;
+}
