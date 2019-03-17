@@ -1,0 +1,42 @@
+.draft {
+    border: 1px solid #1abc9c;
+    border-radius: 5px;
+}
+
+.draft-toolbar, .draft-editor {
+}
+
+.draft-toolbar {
+    padding: 8px 20px;
+    background: #1abc9c;
+    vertical-align: center;
+}
+
+.draft-toolbar-button {
+    display: inline-block;
+    margin: 2px 10px;
+    background: none;
+    outline: 0;
+    cursor: pointer;
+    height: 30px;
+    border: none;
+    font-size: 1.2em;
+    fill: #b9fff1;
+}
+
+.draft-toolbar-button:hover {
+    color: #fff;
+    fill: #fff;
+}
+
+.draft-toolbar-divider {
+    display: inline-block;
+    color: #b9fff1;
+    font-size: 1.2em;
+    line-height: 30px;
+}
+
+.draft-editor {
+    padding: 15px 15px;
+    min-height: 50px;
+}

@@ -7,12 +7,15 @@ module.exports = {
 	module: {
 		rules: [
 			{
+				test: /\.svg$/,
+				loader: 'svg-inline-loader'
+			},
+			{
+				test: /\.(js|jsx)$/,
 				include: [path.resolve(__dirname, 'src')],
 				loader: 'babel-loader',
-
 				options: {
 					plugins: ['syntax-dynamic-import'],
-
 					presets: [
 						[
 							'@babel/preset-env',
@@ -22,13 +25,10 @@ module.exports = {
 							}
 						]
 					]
-				},
-
-				test: /\.(js|jsx)$/
+				}
 			},
 			{
 				test: /\.css$/,
-
 				use: [
 					{
 						loader: 'style-loader',
