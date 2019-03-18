@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import './Header.css';
 
 import logo from './header.png';
-import { ReactComponent as Facebook } from './facebook-icon.svg';
-import { ReactComponent as Twitter } from './twitter-icon.svg';
-import { ReactComponent as Instagram } from './instagram-icon.svg';
-import { ReactComponent as LinkedIn } from './linkedin-icon.svg';
+import { ReactComponent as Facebook } from './icon/facebook-icon.svg';
+import { ReactComponent as Twitter } from './icon/twitter-icon.svg';
+import { ReactComponent as Instagram } from './icon/instagram-icon.svg';
+import { ReactComponent as LinkedIn } from './icon/linkedin-icon.svg';
 
 export default function Header() {
     return (
