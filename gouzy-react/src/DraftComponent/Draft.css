@@ -1,6 +1,7 @@
 .draft {
     border: 1px solid #1abc9c;
     border-radius: 5px;
+    margin-top: 80px;
 }
 
 .draft-toolbar, .draft-editor {
@@ -20,15 +21,6 @@
     padding-right: 10px;
     border-right: 1px solid #b9fff1;
 }
-
-/*@media screen {*/
-    /*.draft-toolbar-group {*/
-        /*display: block;*/
-        /*margin-right: 0;*/
-        /*padding-right: 0;*/
-        /*border-right: 0;*/
-    /*}*/
-/*}*/
 
 .draft-toolbar-button {
     display: inline-block;

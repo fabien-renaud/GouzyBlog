@@ -9,8 +9,7 @@ import Header from "./HeaderComponent/Header";
 // import TopMenu from "./TopMenuComponent/TopMenu";
 import Home from './HomeComponent/Home';
 import Article from './ArticleComponent/Article';
-import Draft from "./DraftComponent/Draft";
-
+import ArticleEdit from "./ArticleEditComponent/ArticleEdit";
 
 render(
     <Router>
@@ -20,7 +19,7 @@ render(
                 <Header/>
                 <Switch>
                     <Route exact path="/" component={Home}/>
-                    <Route path="/edit/:articleId" component={Draft}/>
+                    <Route path="/edit/:articleId" component={ArticleEdit}/>
                     <Route path="/:articleId" component={Article}/>
                 </Switch>
             </div>

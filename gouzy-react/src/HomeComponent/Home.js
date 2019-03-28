@@ -2,28 +2,26 @@ import React, { Component } from 'react';
 import './Home.css';
 
 import ArticlePreview from '../ArticlePreviewComponent/ArticlePreview';
+import articleStore from "../Stores/ArticleStore";
 
 export default class Home extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            articles: articleStore.getAll()
+        };
+    }
+
     render() {
+        const home = this.state;
+
+        const Articles = home.articles.map(article => {
+            return <ArticlePreview name={article.name} content={article.content} />;
+        });
+
         return (
             <div className="App">
-                <ArticlePreview name="HelloWorld" content="Bonjour tout le monde"/>
-                <ArticlePreview name="HelloWorld" content="Bonjour tout le monde"/>
-                <ArticlePreview name="HelloWorld" content="Bonjour tout le monde"/>
-                <ArticlePreview name="HelloWorld" content="Bonjour tout le monde"/>
-                <ArticlePreview name="HelloWorld" content="Bonjour tout le monde"/>
-                <ArticlePreview name="HelloWorld" content="Bonjour tout le monde"/>
-                <ArticlePreview name="HelloWorld" content="Bonjour tout le monde"/>
-                <ArticlePreview name="HelloWorld" content="Bonjour tout le monde"/>
-                <ArticlePreview name="HelloWorld" content="Bonjour tout le monde"/>
-                <ArticlePreview name="HelloWorld" content="Bonjour tout le monde"/>
-                <ArticlePreview name="HelloWorld" content="Bonjour tout le monde"/>
-                <ArticlePreview name="HelloWorld" content="Bonjour tout le monde"/>
-                <ArticlePreview name="HelloWorld" content="Bonjour tout le monde"/>
-                <ArticlePreview name="HelloWorld" content="Bonjour tout le monde"/>
-                <ArticlePreview name="HelloWorld" content="Bonjour tout le monde"/>
-                <ArticlePreview name="HelloWorld" content="Bonjour tout le monde"/>
-                <ArticlePreview name="HelloWorld" content="Bonjour tout le monde"/>
+                {Articles}
             </div>
         );
     }
