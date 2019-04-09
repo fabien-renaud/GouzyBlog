@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Editor, EditorState, RichUtils } from 'draft-js';
-// import { convertToRaw, convertFromRaw, Editor, EditorState, Modifier, RichUtils } from 'draft-js';
+import { convertToRaw, Editor, EditorState, RichUtils } from 'draft-js';
 import './Draft.css';
-import './../../node_modules/draft-js/dist/Draft.css';
+import './../../../node_modules/draft-js/dist/Draft.css';
 
 import { ReactComponent as Bold } from './icon/bold-icon.svg';
 import { ReactComponent as Italic } from './icon/italic-icon.svg';
@@ -44,7 +43,10 @@ export default class Draft extends Component {
         return 'not-handled';
     };
 
-    onChange = (editorState) => {this.setState({ editorState })};
+    onChange = (editorState) => {
+        this.setState({ editorState });
+        this.props.onChange(convertToRaw(this.state.editorState.getCurrentContent()));
+    };
 
     onClick = (type, value) => {
         switch (type) {

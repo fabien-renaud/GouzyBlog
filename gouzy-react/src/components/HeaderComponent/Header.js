@@ -24,7 +24,7 @@ export default function Header() {
                         <li><a href="https://www.linkedin.com/in/mrnroch/"><LinkedIn className="icon" /></a></li>
                     </ul>
                 </nav>
-                <Link to="/a"><img src={logo} alt="Logo" /></Link>
+                <Link to="/"><img src={logo} alt="Logo" /></Link>
             </header>
         </div>
     )

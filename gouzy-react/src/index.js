@@ -5,11 +5,10 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
-import Header from "./HeaderComponent/Header";
-// import TopMenu from "./TopMenuComponent/TopMenu";
-import Home from './HomeComponent/Home';
-import Article from './ArticleComponent/Article';
-import ArticleEdit from "./ArticleEditComponent/ArticleEdit";
+import Home from './pages/HomePage/Home';
+import Article from './pages/ArticlePage/Article';
+import ArticleEdit from "./pages/ArticleEditPage/ArticleEdit";
+import Header from "./components/HeaderComponent/Header";
 
 render(
     <Router>

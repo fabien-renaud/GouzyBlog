@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './Home.css';
 
-import ArticlePreview from '../ArticlePreviewComponent/ArticlePreview';
-import articleStore from "../Stores/ArticleStore";
+import ArticlePreview from '../../components/ArticlePreviewComponent/ArticlePreview';
+import articleStore from "../../stores/ArticleStore";
 
 export default class Home extends Component {
     constructor(props) {
