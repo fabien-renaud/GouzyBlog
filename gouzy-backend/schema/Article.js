@@ -1,20 +1,15 @@
 const mongoose = require('mongoose');
 
-let articleSchema = new mongoose.Schema ({
+const ArticleSchema = new mongoose.Schema ({
+    url: String,
     name: String,
-    tag: String,
-    subtag: String
+    content: String,
+    author: String,
+    background: String,
+    category: String,
+    tag: Array,
+    public: Boolean,
+    publicationDate: { type: Date, default: Date.now() }
 });
 
-articleSchema.methods.preview = () => {
-    console.log(this);
-    return this.subtag ? this.subtag : "This is empty !";
-};
-
-let Article = mongoose.model('Article', articleSchema);
-
-let article1 = new Article({name: "This is me !", subtag: "Hello world"});
-let article2 = new Article({name: "Oh no"});
-
-console.log(article1.preview());
-console.log(article2.preview());
+mongoose.model('Article', ArticleSchema);

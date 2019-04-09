@@ -1,27 +1,15 @@
 const express       = require('express');
 const path          = require('path');
 const bodyParser    = require('body-parser');
+const app           = express();
 const mongoose      = require('mongoose');
 
-const app = express();
+require('./schema/Article');
+const api           = require('./api/');
 
 // Enable bodyParser
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:false}));
-
-// Configure mongoose
-let uri = 'mongodb://user:password' +
-    'gouzyblog-shard-00-00-twqra.mongodb.net:27017,' +
-    'gouzyblog-shard-00-01-twqra.mongodb.net:27017,' +
-    'gouzyblog-shard-00-02-twqra.mongodb.net:27017/gouzydb?' +
-    'ssl=true&replicaSet=GouzyBlog-shard-0';
-mongoose.connect(uri, { useNewUrlParser: true });
-
-let db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', () => {
-    console.log("Connected !")
-});
+app.use(bodyParser.urlencoded({ extended:false }));
 
 // CORS definition
 app.use(function(req, res, next) {
@@ -31,9 +19,18 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.use(express.static(path.join(__dirname, '/..', 'gouzy-react', 'build')));
+// Mongoose Instantiation
+const uri = "mongodb+srv://tenrah:<password>@gouzyblog-twqra.mongodb.net/gouzydb";
+mongoose.connect(uri, { useNewUrlParser: true })
+    .then(() => console.log("Connection etablished"))
+    .catch((e) => console.log("MongoDB Connection error :" + e));
 
-app.get('/', function(req, res) {
+// API route
+app.use('/api', api);
+
+// Application resources & route
+app.use(express.static(path.join(__dirname, '/..', 'gouzy-react', 'build')));
+app.get('*', function(req, res) {
     res.sendFile(path.join(__dirname, '/..', 'gouzy-react', 'build', 'index.html'));
 });
 
