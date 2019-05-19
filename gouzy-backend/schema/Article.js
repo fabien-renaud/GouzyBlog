@@ -10,6 +10,6 @@ const ArticleSchema = new mongoose.Schema ({
     tag: Array,
     public: Boolean,
     publicationDate: { type: Date, default: Date.now() }
-});
+}, { collection: 'Article' });
 
 mongoose.model('Article', ArticleSchema);

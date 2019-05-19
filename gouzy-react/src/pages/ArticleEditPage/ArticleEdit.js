@@ -5,8 +5,6 @@ import Editor from '../../components/DraftComponent/Draft';
 import { ReactComponent as DragAndDropIcon } from './icon/picture-icon.svg';
 import './ArticleEdit.css';
 
-import articleStore from "../../stores/ArticleStore";
-
 export default class ArticleEdit extends Component {
     constructor(props) {
         super(props);

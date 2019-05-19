@@ -23,7 +23,7 @@ app.use(function(req, res, next) {
 const uri = "mongodb+srv://tenrah:<password>@gouzyblog-twqra.mongodb.net/gouzydb";
 mongoose.connect(uri, { useNewUrlParser: true })
     .then(() => console.log("Connection etablished"))
-    .catch((e) => console.log("MongoDB Connection error :" + e));
+    .catch((e) => console.log("MongoDB Connection error : " + e));
 
 // API route
 app.use('/api', api);
